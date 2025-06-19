@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum of Even Numbers (0 to 100)</title>
+</head>
+<body>
+    <h2>Sum of Even Numbers (0 to 100)</h2>
+    <p id="output"></p>
+
+    <script>
+        let sum = 0;
+        for (let i = 0; i <= 100; i++) {
+            if (i % 2 === 0) {
+                sum += i;
+            }
+        }
+        document.getElementById("output").innerText = "The sum is: " + sum;
+    </script>
+</body>
+</html>
