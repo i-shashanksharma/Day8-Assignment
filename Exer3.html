@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Pattern Printing</title>
+</head>
+<body>
+    <h2>Star Pattern</h2>
+    <pre id="pattern"></pre>
+    <script>
+        let pattern = "";
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= i; j++) {
+                pattern += "*";
+            }
+            pattern += "\n";
+        }
+        document.getElementById("pattern").textContent = pattern;
+    </script>
+</body>
+</html>

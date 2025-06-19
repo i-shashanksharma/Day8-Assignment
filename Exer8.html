@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Record System</title>
+</head>
+<body>
+    <h2>Student Record System</h2>
+    <button onclick="addSubject()">Add Subject</button>
+    <button onclick="updateGrade()">Update Grade</button>
+    <button onclick="displayInfo()">Display Student Info</button>
+    <pre id="output"></pre>
+    <script>
+        let student = {
+            name: "Ramesh Kumar",
+            age: 16,
+            grade: "10th",
+            subjects: ["Math", "Science", "English"]
+        };
+        function addSubject() {
+            let newSubject = prompt("Enter a new subject to add:");
+            if (newSubject) {
+                student.subjects.push(newSubject);
+                alert(`Subject "${newSubject}" added.`);
+            }
+        }
+        function updateGrade() {
+            let newGrade = prompt("Enter the new grade:");
+            if (newGrade) {
+              student.grade = newGrade;
+                alert(`Grade updated to "${newGrade}".`);
+            }
+        }
+        function displayInfo() {
+            let info = `Name: ${student.name}\n` +
+                       `Age: ${student.age}\n` +
+                       `Grade: ${student.grade}\n` +
+                       `Subjects: ${student.subjects.join(", ")}`;
+            document.getElementById("output").textContent = info;
+        }
+    </script>
+</body>
+</html>

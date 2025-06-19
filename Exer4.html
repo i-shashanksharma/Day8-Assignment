@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Input Validation (1 to 10)</title>
+</head>
+<body>
+    <h2>Enter a number between 1 and 10</h2>
+    <p id="message"></p>
+    <script>
+        let number;
+        do {
+            number = prompt("Please enter a number between 1 and 10:");
+            number = parseInt(number);
+        } while (isNaN(number) || number < 1 || number > 10);
+        document.getElementById("message").textContent = "You entered a valid number: " + number;
+    </script>
+</body>
+</html>

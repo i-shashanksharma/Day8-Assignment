@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum of Positive Numbers</title>
+</head>
+<body>
+    <h2>Sum of Positive Numbers in an Array</h2>
+    <p id="result"></p>
+    <script>
+        let numbers = [3, 2, 5, 1, 7, 0, 4, 8];
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] > 0) {
+                sum += numbers[i];
+            }
+        }
+        document.getElementById("result").textContent = "The sum of positive numbers is: " + sum;
+    </script>
+</body>
+</html>

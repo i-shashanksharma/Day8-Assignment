@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Library System</title>
+</head>
+<body>
+  <h2>Library System</h2>
+  <button onclick="displayAvailableBooks()">Display Available Books</button>
+  <button onclick="borrowBook()">Borrow a Book</button>
+  <button onclick="addBook()">Add a New Book</button>
+  <pre id="output"></pre>
+  <script>
+    let library = [
+      { title: "The Alchemist", author: "Paulo Coelho", year: 1988, available: true },
+      { title: "1984", author: "George Orwell", year: 1949, available: true },
+      { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960, available: false }
+    ];
+    function displayAvailableBooks() {
+      let availableBooks = library.filter(book => book.available);
+      if (availableBooks.length === 0) {
+        document.getElementById("output").textContent = "No books available.";
+        return;
+      }
+      let result = "Available Books:\n\n";
+      availableBooks.forEach(book => {
+        result += `Title: ${book.title}\nAuthor: ${book.author}\nYear: ${book.year}\n\n`;
+      });
+      document.getElementById("output").textContent = result;
+    }
+    function borrowBook() {
+      let title = prompt("Enter the title of the book to borrow:");
+      let book = library.find(book => book.title.toLowerCase() === title.toLowerCase());
+      if (book) {
+        if (book.available) {
+          book.available = false;
+          alert(`You have borrowed: ${book.title}`);
+        } else {
+          alert("That book is already borrowed.");
+        }
+      } else {
+        alert("Book not found in the library.");
+      }
+    }
+    function addBook() {
+      let title = prompt("Enter book title:");
+      let author = prompt("Enter author:");
+      let year = parseInt(prompt("Enter publication year:"));
+      if (title && author && !isNaN(year)) {
+        library.push({ title, author, year, available: true });
+        alert(`Book "${title}" added to the library.`);
+      } else {
+        alert("Invalid input. Book not added.");
+      }
+    }
+  </script>
+</body>
+</html>
